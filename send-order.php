@@ -12,7 +12,8 @@ $customEmail = 'your-email';
 try {
 	// send order email
 	$order = Mage::getModel('sales/order')->loadByIncrementId($orderId);
-	// check if oirder id exists
+	
+	// check if order id exists
 	if ($order->getId()) {
 		$order->setCustomerEmail($customEmail);
 		$order->sendNewOrderEmail();
